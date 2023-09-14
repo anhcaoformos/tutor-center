@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "entityTableName": "teacher",
+  "fields": [
+    {
+      "fieldName": "totalSalary",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "name": "Teacher",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "teacher",
+      "relationshipName": "classroom",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "teacherRequest",
+      "otherEntityRelationshipName": "teacher",
+      "relationshipName": "teacherRequest",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ]
+}

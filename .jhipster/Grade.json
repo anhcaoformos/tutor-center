@@ -1,0 +1,12 @@
+{
+  "applications": "*",
+  "entityTableName": "grade",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Grade",
+  "relationships": []
+}

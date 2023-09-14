@@ -1,0 +1,7 @@
+{
+  "applications": "*",
+  "entityTableName": "user",
+  "fields": [],
+  "name": "User",
+  "relationships": []
+}

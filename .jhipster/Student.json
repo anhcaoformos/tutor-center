@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "entityTableName": "student",
+  "fields": [],
+  "name": "Student",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "enrollment",
+      "otherEntityRelationshipName": "student",
+      "relationshipName": "enrollment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "student",
+      "relationshipName": "classroom",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "parent",
+      "otherEntityRelationshipName": "student",
+      "relationshipName": "parent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

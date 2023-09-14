@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "entityTableName": "class_section",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "ClassSectionStatus",
+      "fieldValues": "OPENED,CLOSED,RUNNING"
+    },
+    {
+      "fieldName": "startTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "times",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "ClassSection",
+  "relationships": [
+    {
+      "otherEntityName": "studentAbsence",
+      "otherEntityRelationshipName": "classSection",
+      "relationshipName": "studentAbsence",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "classSection",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "entityTableName": "teacher_request",
+  "fields": [
+    {
+      "fieldName": "startFreeInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endFreeInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "fromSalary",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "toSalary",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dayOfWeeks",
+      "fieldType": "String"
+    }
+  ],
+  "name": "TeacherRequest",
+  "relationships": [
+    {
+      "otherEntityName": "subject",
+      "relationshipName": "subject",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "grade",
+      "relationshipName": "grade",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "teacherRequest",
+      "relationshipName": "teacher",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

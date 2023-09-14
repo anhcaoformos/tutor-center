@@ -1,0 +1,21 @@
+{
+  "applications": "*",
+  "entityTableName": "student_absence",
+  "fields": [],
+  "name": "StudentAbsence",
+  "relationships": [
+    {
+      "otherEntityName": "student",
+      "relationshipName": "student",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "classSection",
+      "otherEntityRelationshipName": "studentAbsence",
+      "relationshipName": "classSection",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "entityTableName": "parent_request",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "startInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dayOfWeeks",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salary",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "ParentRequest",
+  "relationships": [
+    {
+      "otherEntityName": "subject",
+      "relationshipName": "subject",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "grade",
+      "relationshipName": "grade",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "parent",
+      "otherEntityRelationshipName": "parentRequest",
+      "relationshipName": "parent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}
