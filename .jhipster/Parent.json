@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "entityTableName": "parent",
+  "fields": [
+    {
+      "fieldName": "totalCost",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "name": "Parent",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "student",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "parentRequest",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "parentRequest",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ]
+}

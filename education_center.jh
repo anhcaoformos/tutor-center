@@ -1,0 +1,96 @@
+entity Teacher {
+	totalSalary BigDecimal
+}
+entity Student {
+	
+}
+entity Parent {
+	totalCost BigDecimal
+}
+entity Grade {
+	name String
+}
+entity Subject {
+	name String
+}
+entity Classroom {
+	status ClassroomStatus
+    startInDay LocalDate
+    endInDay LocalDate
+    dayOfWeeks String
+}
+entity Enrollment {
+	enrollTime LocalDate
+}
+entity StudentAbsence {
+}
+entity ClassSection {
+	status ClassSectionStatus
+    startTime LocalDate
+    endTime LocalDate
+    times Integer
+}
+entity TeacherRequest {
+	startFreeInDay LocalDate
+    endFreeInDay LocalDate
+    fromSalary Long
+    toSalary Long
+    dayOfWeeks String
+}
+entity ParentRequest {
+	startDate LocalDate
+    startInDay LocalDate
+    endInDay LocalDate
+    dayOfWeeks String
+    salary Long
+}
+entity Country {
+	code String
+    name String
+}
+entity State {
+	name String
+}
+entity Address {
+	street String
+    city String
+    state String
+    country String
+    zipCode String
+}
+entity User {
+}
+relationship OneToOne {
+	Classroom {grade} to Grade
+    Classroom {Subject} to Subject
+    Teacher {user} to User
+    Student {user} to User
+    Parent {user} to User
+    TeacherRequest {subject} to Subject
+    TeacherRequest {grade} to Grade
+    ParentRequest {subject} to Subject
+    ParentRequest {grade} to Grade
+    StudentAbsence {student} to Student
+}
+relationship OneToMany {
+    Parent {student} to Student {parent}
+    Teacher {classroom} to Classroom {teacher}
+    Classroom {classroom} to ClassSection {classSection}
+    Teacher {TeacherRequest} to TeacherRequest {teacher}
+    Parent {ParentRequest} to ParentRequest {parent}
+    Classroom {enrollment} to Enrollment {classroom}
+    Student {enrollment} to Enrollment {student}
+    Country {state} to State {country}
+    ClassSection {studentAbsence} to StudentAbsence {classSection}
+}
+relationship ManyToMany {
+	Student {classroom} to Classroom {student}
+}
+
+enum ClassroomStatus {
+	OPENED, CLOSED
+}
+
+enum ClassSectionStatus {
+	OPENED, CLOSED, RUNNING
+}

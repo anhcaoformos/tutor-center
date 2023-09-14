@@ -1,0 +1,20 @@
+{
+  "applications": "*",
+  "entityTableName": "state",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "State",
+  "relationships": [
+    {
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "state",
+      "relationshipName": "country",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

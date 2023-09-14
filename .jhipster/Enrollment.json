@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "entityTableName": "enrollment",
+  "fields": [
+    {
+      "fieldName": "enrollTime",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Enrollment",
+  "relationships": [
+    {
+      "otherEntityName": "classroom",
+      "otherEntityRelationshipName": "enrollment",
+      "relationshipName": "classroom",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "enrollment",
+      "relationshipName": "student",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

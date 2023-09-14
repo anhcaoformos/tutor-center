@@ -1,0 +1,66 @@
+{
+  "applications": "*",
+  "entityTableName": "classroom",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "ClassroomStatus",
+      "fieldValues": "OPENED,CLOSED"
+    },
+    {
+      "fieldName": "startInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endInDay",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dayOfWeeks",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Classroom",
+  "relationships": [
+    {
+      "otherEntityName": "grade",
+      "relationshipName": "grade",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "subject",
+      "relationshipName": "subject",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "classSection",
+      "otherEntityRelationshipName": "classSection",
+      "relationshipName": "classroom",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "enrollment",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "enrollment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "teacher",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "classroom",
+      "relationshipName": "student",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ]
+}

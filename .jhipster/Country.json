@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "entityTableName": "country",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Country",
+  "relationships": [
+    {
+      "otherEntityName": "state",
+      "otherEntityRelationshipName": "country",
+      "relationshipName": "state",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ]
+}
